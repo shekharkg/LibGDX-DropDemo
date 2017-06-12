@@ -62,6 +62,7 @@ build/
 
 ## OS Specific
 .DS_Store
+
 android/libs/
 build.gradle
 gradle.properties
