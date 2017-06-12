@@ -37,8 +37,8 @@ public class MainMenuScreen implements Screen {
 
 
     game.batch.begin();
-    game.font.draw(game.batch, "Welcome to Drop!!", 100, 150);
-    game.font.draw(game.batch, "Tap anywhere to begin!", 100, 100);
+    game.font.draw(game.batch, "Welcome to Drop!!", 300, 250);
+    game.font.draw(game.batch, "Tap anywhere to begin!", 300, 200);
     game.batch.end();
 
     if (Gdx.input.isTouched()) {
