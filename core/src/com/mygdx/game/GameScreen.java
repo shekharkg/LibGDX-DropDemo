@@ -95,7 +95,7 @@ public class GameScreen implements Screen {
     game.batch.setProjectionMatrix(camera.combined);
     game.batch.begin();
     game.batch.draw(bucketImage, bucket.x, bucket.y);
-    game.font.draw(game.batch, "Score : " + score, 750, 400);
+    game.font.draw(game.batch, "Score : " + score, 700, 420);
     for (Rectangle raindrop : raindrops)
       game.batch.draw(dropImage, raindrop.x, raindrop.y);
     game.batch.end();
