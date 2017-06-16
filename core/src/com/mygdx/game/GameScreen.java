@@ -40,7 +40,6 @@ public class GameScreen implements Screen {
   private Texture dropImage;
   private Texture bucketImage;
   private Sound dropSound;
-  private Music rainMusic;
 
   private int score;
 
@@ -73,15 +72,11 @@ public class GameScreen implements Screen {
 
     //Initializing sound
     dropSound = Gdx.audio.newSound(Gdx.files.internal("drop.wav"));
-    rainMusic = Gdx.audio.newMusic(Gdx.files.internal("rain.mp3"));
 
-    //Set the rain music in loop and play
-    rainMusic.setLooping(true);
   }
 
   @Override
   public void show() {
-    rainMusic.play();
   }
 
   @Override
@@ -176,6 +171,5 @@ public class GameScreen implements Screen {
     dropImage.dispose();
     bucketImage.dispose();
     dropSound.dispose();
-    rainMusic.dispose();
   }
 }

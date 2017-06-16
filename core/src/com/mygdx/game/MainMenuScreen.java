@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 
 
 /**
@@ -15,11 +16,17 @@ public class MainMenuScreen implements Screen {
   private final MyGdxGame game;
   private OrthographicCamera camera;
 
+  private Texture playImage;
+  private Texture dropImage;
+
   MainMenuScreen(final MyGdxGame game) {
     this.game = game;
 
     camera = new OrthographicCamera();
     camera.setToOrtho(false, 800, 480);
+
+    playImage = new Texture(Gdx.files.internal("play.png"));
+    dropImage = new Texture(Gdx.files.internal("droplet.png"));
   }
 
 
@@ -35,10 +42,9 @@ public class MainMenuScreen implements Screen {
 
     camera.update();
 
-
     game.batch.begin();
-    game.font.draw(game.batch, "Welcome to Drop!!", 300, 250);
-    game.font.draw(game.batch, "Tap anywhere to begin!", 300, 200);
+    game.batch.draw(playImage, camera.position.x - (playImage.getWidth() / 2),
+        camera.position.y - (playImage.getHeight() / 2));
     game.batch.end();
 
     if (Gdx.input.isTouched()) {
@@ -69,7 +75,7 @@ public class MainMenuScreen implements Screen {
 
   @Override
   public void dispose() {
-
+    playImage.dispose();
   }
 
 }
