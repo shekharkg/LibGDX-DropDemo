@@ -1,7 +1,8 @@
-package com.mygdx.game;
+package com.mygdx.game.screens;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.mygdx.game.MyGdxGame;
 
 /**
  * Created by shekhar on 6/14/17.

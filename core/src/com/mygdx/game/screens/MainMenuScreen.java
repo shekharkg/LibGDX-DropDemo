@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -9,6 +9,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.TimeUtils;
+import com.mygdx.game.MyGdxGame;
 
 import java.util.Iterator;
 
@@ -24,10 +25,11 @@ public class MainMenuScreen implements Screen {
 
   private Texture playImage;
   private Texture dropImage;
+
   private Array<Rectangle> rainDrops;
   private long lastDropTime;
 
-  MainMenuScreen(final MyGdxGame game) {
+  public MainMenuScreen(final MyGdxGame game) {
     this.game = game;
 
     camera = new OrthographicCamera();
@@ -65,7 +67,7 @@ public class MainMenuScreen implements Screen {
     game.batch.end();
 
     if (Gdx.input.isTouched()) {
-      game.setScreen(new GameScreen(game));
+      game.setScreen(new com.mygdx.game.screens.GameScreen(game));
       dispose();
     }
 
